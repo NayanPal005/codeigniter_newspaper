@@ -14,23 +14,34 @@ class Admin_login extends CI_Controller {
 
     }
     public function admin_login_check(){
+        $this->form_validation->set_rules('user_email', 'UserEmail', 'trim|required');
+        $this->form_validation->set_rules('user_password', 'Password', 'trim|required');
 
-        $userEmail= $this->input->post('user_email',TRUE);
+        if($this->form_validation->run()) {
 
-        $userPassword= $this->input->post('user_password',TRUE);
+            $userEmail = $this->input->post('user_email', TRUE);
+            $userPassword = $this->input->post('user_password', TRUE);
 
-        $this->load->model('admin_login_model');
-        $userDetail= $this->admin_login_model->get_user_details($userEmail);
-        $email=$userDetail->user_email;
-     if ($userEmail==$email) {
-         $data = array();
-         $data['container'] = '';
-         $this->load->view('master', $data);
-     }
-     else {
-         echo "Incorrect";
-         return redirect('admin_login');
-     }
+            $this->load->model('admin_login_model');
+            $userDetail = $this->admin_login_model->get_user_details($userEmail);
+            $email = $userDetail->user_email;
+            $password = $userDetail->user_password;
+
+            if ($userEmail == $email && password_verify( $userPassword,$password)) {
+              
+                $data = array();
+                $data['container'] = '';
+                $this->load->view('master', $data);
+            } else {
+                echo "Incorrect";
+                return redirect('admin_login');
+            }
+        }
+        else{
+
+            return redirect('admin_login');
+
+        }
 
 
     }

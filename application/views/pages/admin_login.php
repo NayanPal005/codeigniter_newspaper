@@ -38,7 +38,7 @@
 
         <form action="<?= base_url()?>admin-login-check" method="post">
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" name="user_email" placeholder="Email">
+                <input type="email" class="form-control" name="user_email" placeholder="UserEmail">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
