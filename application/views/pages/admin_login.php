@@ -31,6 +31,7 @@
 <div class="login-box">
     <div class="login-logo">
         <a href="../../index2.html"><b>Admin</b>Login</a>
+
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
@@ -72,8 +73,15 @@
 <!---->
 <!--        <a href="#">I forgot my password</a><br>-->
 <!--        <a href="register.html" class="text-center">Register a new membership</a>-->
+        <div class="sesssion" style="color: red">
+        <?php
+        if (isset($error_message))
+            echo $error_message;
+        ?>
+        </div>
 
     </div>
+
     <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
