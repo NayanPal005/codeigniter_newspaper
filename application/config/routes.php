@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['show-dashboard']='admin_login/show_dashboard';
+$route['admin-login-check']='admin_login/admin_login_check';
