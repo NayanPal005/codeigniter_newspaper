@@ -13,6 +13,8 @@ class Admin extends CI_Controller
         $data=array();
 
         $data['container']=$this->load->view('pages/add_news','',True);
+        $data['extra'] ='';
+
 
         $this->load->view('master',$data);
 
@@ -25,6 +27,7 @@ class Admin extends CI_Controller
         $data=array();
 
         $data['container']=$this->load->view('pages/add_category','',True);
+        $data['extra'] ='';
 
         $this->load->view('master',$data);
 

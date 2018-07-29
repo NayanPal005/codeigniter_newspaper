@@ -48,7 +48,9 @@ class Admin_login extends CI_Controller {
                     $sessionData['myAlldata']=$this->session->all_userdata();
 
                     $data = array();
+                    $data['extra'] = $this->load->view('pages/extra','',True);
                     $data['container'] = '';
+                   // $data['extra'] = $this->load->view('pages/extra');
                     $this->load->view('master', $data,$sessionData);
 
                 }

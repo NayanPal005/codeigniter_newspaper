@@ -12,6 +12,7 @@ class Super_admin extends CI_Controller
     public function manage_news(){
 
         $data=array();
+        $data['extra'] ='';
 
         $data['container']=$this->load->view('pages/news_details','',True);
 
@@ -20,6 +21,7 @@ class Super_admin extends CI_Controller
     public function manage_category(){
 
         $data=array();
+        $data['extra'] ='';
 
         $data['container']=$this->load->view('pages/manage_category','',True);
 
