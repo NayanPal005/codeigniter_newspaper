@@ -41,6 +41,10 @@ class Admin_login extends CI_Controller {
 
                     $session_data['user_role'] = $userDetail->user_role;
 
+                    $session_data['access_label'] = $userDetail->access_label;
+
+                    $session_data['activation_status'] = $userDetail->activation_status;
+
                     $this->load->library('session');
 
                     $this->session->set_userdata($session_data);
@@ -51,7 +55,7 @@ class Admin_login extends CI_Controller {
                     $data['extra'] = $this->load->view('pages/extra','',True);
                     $data['container'] = '';
                    // $data['extra'] = $this->load->view('pages/extra');
-                    $this->load->view('master', $data,$sessionData);
+                    $this->load->view('master', $data);
 
                 }
                 else{
@@ -77,6 +81,17 @@ class Admin_login extends CI_Controller {
 
         }
 
+
+    }
+    public function logout(){
+
+        // $this->session->unset_userdata('user_status');
+
+        $this->session->sess_destroy();
+
+        // redirect('admin-login');
+
+      return redirect('admin_login');
 
     }
 

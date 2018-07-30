@@ -77,6 +77,8 @@
         <?php
         if (isset($error_message))
             echo $error_message;
+
+       // $this->session->unset_userdata($error_message);
         ?>
         </div>
 

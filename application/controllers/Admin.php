@@ -15,7 +15,6 @@ class Admin extends CI_Controller
         $data['container']=$this->load->view('pages/add_news','',True);
         $data['extra'] ='';
 
-
         $this->load->view('master',$data);
 
 
